@@ -1,0 +1,55 @@
+Este sistema de gestión clínica está pensado para facilitar la administración de pacientes, médicos, turnos y recetas. Su estructura se basa en programación orientada a objetos, lo que permite una organización clara y flexible del código.
+
+Antes de comenzar, asegurate de tener Python instalado en tu computadora. Luego, seguí estos pasos:
+
+1. Cloná este repositorio o descargá todos los archivos del proyecto.
+2. Abrí una terminal y movete al directorio donde se encuentran los archivos.
+   Ejemplo: Este-equipo/Escritorio/computacion-1/computaci-n-2025-05-27-gesti-n-cl-nica-SantiagoStacchiola
+   Para hacerlo, usá el comando `cd` seguido del camino hacia esa carpeta.
+3. Ejecutá el archivo principal con el siguiente comando:
+
+   python src/cli.py  
+
+   Dependiendo de tu instalación, puede que necesites usar:
+
+   python3 src/cli.py
+
+   Si estás usando un entorno virtual, activalo antes de ejecutar el sistema.
+4. Seguí las instrucciones que aparecerán en pantalla para usar la aplicación.
+
+Para correr las pruebas del sistema, también necesitás tener Python instalado. Seguí estos pasos:
+
+1. Cloná el repositorio o descargá los archivos del proyecto.
+2. Abrí una terminal y ubicá el directorio del proyecto con el comando `cd`.
+   Ejemplo: Este-equipo/Escritorio/computacion-1/computaci-n-2025-05-27-gesti-n-cl-nica-SantiagoStacchiola
+3. Asegurate de contar con el módulo `unittest`. Viene incluido con Python, pero si tu entorno lo requiere, podés instalarlo con:
+   
+   pip install unittest
+
+4. Para correr todos los tests:
+
+   python -m unittest
+
+   O si querés correr un test en particular:
+
+   python -m unittest tests.test_nombre_del_test
+
+5. Observá los resultados directamente en la terminal. Si todos los tests pasan, el sistema lo indicará.
+6. Si algún test falla, se mostrará un mensaje de error con detalles para ayudarte a encontrar y solucionar el problema.
+
+Componentes principales:
+
+- **Clinica**: Clase central que administra pacientes, médicos, turnos y recetas. Ofrece métodos para registrar pacientes, médicos, agendar turnos, emitir recetas y consultar historias clínicas.
+- **Paciente**: Modelo que representa a un paciente, con atributos como nombre, DNI y su historia clínica. Permite almacenar sus turnos y recetas.
+- **Medico**: Modelo que representa a un profesional médico, con matrícula, nombre y especialidades. Puede agregar especialidades y verificar disponibilidad en ciertos días.
+- **Especialidad**: Define una especialidad médica, incluyendo su nombre y los días de atención.
+- **Turno**: Representa una cita médica con paciente, médico, especialidad, fecha y hora.
+- **Receta**: Documento generado por un médico para un paciente, con una lista de medicamentos indicados.
+- **HistoriaClinica**: Registro de todos los turnos y recetas de un paciente.
+- **Excepciones**: El sistema maneja errores mediante excepciones personalizadas como `PacienteYaExisteError`, `MedicoYaExisteError`, `TurnoDuplicadoError`, entre otras.
+
+El sistema cuenta con una interfaz de línea de comandos (CLI), que permite a los usuarios interactuar fácilmente con la aplicación. A través de un menú, es posible registrar pacientes y médicos, gestionar turnos, emitir recetas y consultar registros.
+
+Además, el sistema está diseñado de forma modular y escalable, lo que facilita futuras mejoras o ampliaciones. Se aplican validaciones para evitar datos duplicados y asegurar la coherencia de la información.
+
+Por último, se incluye una batería de pruebas unitarias que verifican que cada clase y método funcionen correctamente, cumpliendo con los requisitos funcionales del proyecto.
